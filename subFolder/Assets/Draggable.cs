@@ -7,7 +7,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 	
 	public Transform parentToReturnTo = null;
 	public Transform placeholderParent = null;
-
+    public bool isDragging = false;
 	GameObject placeholder = null;
 	
 	public void OnBeginDrag(PointerEventData eventData) {
@@ -28,7 +28,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 		this.transform.SetParent( this.transform.parent.parent );
 		
 		GetComponent<CanvasGroup>().blocksRaycasts = false;
-	}
+        isDragging = true;
+    }
 	
 	public void OnDrag(PointerEventData eventData) {
 		//Debug.Log ("OnDrag");
@@ -63,7 +64,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 		GetComponent<CanvasGroup>().blocksRaycasts = true;
 
 		Destroy(placeholder);
-	}
+        isDragging = false;
+    }
 	
 	
 	
