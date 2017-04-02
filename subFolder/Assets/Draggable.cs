@@ -2,12 +2,14 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.EventSystems;
-
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
-	
+
 	public Transform parentToReturnTo = null;
 	public Transform placeholderParent = null;
-    public bool isDragging = false;
+
+	public enum Slot { ZONE1MAIN, ZONE2MAIN, ZONE3MAIN, ZONE1MAINENEMY, ZONE2MAINENEMY, ZONE3MAINENEMY, HAND};
+	public Slot typeOfItem = Slot.ZONE1MAIN;
+
 	GameObject placeholder = null;
 	
 	public void OnBeginDrag(PointerEventData eventData) {
@@ -28,8 +30,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 		this.transform.SetParent( this.transform.parent.parent );
 		
 		GetComponent<CanvasGroup>().blocksRaycasts = false;
-        isDragging = true;
-    }
+	}
 	
 	public void OnDrag(PointerEventData eventData) {
 		//Debug.Log ("OnDrag");
@@ -64,8 +65,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 		GetComponent<CanvasGroup>().blocksRaycasts = true;
 
 		Destroy(placeholder);
-        isDragging = false;
-    }
+	}
 	
 	
 	
