@@ -1,8 +1,9 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+﻿<Properties StartupItem="Card Game for GD club.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Draggable.cs">
     <Files>
-      <File FileName="Assets\Draggable.cs" Line="1" Column="1" />
+      <File FileName="Assets\Draggable.cs" Line="10" Column="22" />
+      <File FileName="Assets\DropZone.cs" Line="13" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
